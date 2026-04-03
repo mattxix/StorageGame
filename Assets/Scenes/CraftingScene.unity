@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!20 &76384381 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7379110759257878389, guid: dfd4ac03efe47cc47b7c5351a8fd5813, type: 3}
+  m_PrefabInstance: {fileID: 876983620}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &201117176
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,7 +190,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 4580c99f8d2d00045b667bb3113ff586, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -246,6 +251,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CraftTrigger
   slotIndex: 1
   table: {fileID: 1307999561}
+--- !u!4 &503050809 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2667168747696963328, guid: dfd4ac03efe47cc47b7c5351a8fd5813, type: 3}
+  m_PrefabInstance: {fileID: 876983620}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &535018499
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,7 +322,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 4580c99f8d2d00045b667bb3113ff586, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -448,6 +458,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 760306215}
   m_CullTransparentMesh: 1
+--- !u!1001 &876983620
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 307111529982030321, guid: dfd4ac03efe47cc47b7c5351a8fd5813, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.68792
+      objectReference: {fileID: 0}
+    - target: {fileID: 307111529982030321, guid: dfd4ac03efe47cc47b7c5351a8fd5813, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.03254
+      objectReference: {fileID: 0}
+    - target: {fileID: 307111529982030321, guid: dfd4ac03efe47cc47b7c5351a8fd5813, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.48141
+      objectReference: {fileID: 0}
+    - target: {fileID: 307111529982030321, guid: dfd4ac03efe47cc47b7c5351a8fd5813, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 307111529982030321, guid: dfd4ac03efe47cc47b7c5351a8fd5813, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 307111529982030321, guid: dfd4ac03efe47cc47b7c5351a8fd5813, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 307111529982030321, guid: dfd4ac03efe47cc47b7c5351a8fd5813, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 307111529982030321, guid: dfd4ac03efe47cc47b7c5351a8fd5813, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 307111529982030321, guid: dfd4ac03efe47cc47b7c5351a8fd5813, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 307111529982030321, guid: dfd4ac03efe47cc47b7c5351a8fd5813, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397426113310362806, guid: dfd4ac03efe47cc47b7c5351a8fd5813, type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2521515397142814872, guid: dfd4ac03efe47cc47b7c5351a8fd5813, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 76384381}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dfd4ac03efe47cc47b7c5351a8fd5813, type: 3}
 --- !u!1001 &964155169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -523,6 +594,10 @@ PrefabInstance:
     - target: {fileID: 6479446054112550015, guid: 1df613cf4dee77f4a9169b60387719b1, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6479446054112550015, guid: 1df613cf4dee77f4a9169b60387719b1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6551024394162310366, guid: 1df613cf4dee77f4a9169b60387719b1, type: 3}
       propertyPath: jumpStrength
@@ -1402,7 +1477,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 9452ae1262a74094f8a68013fbcd1834, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1984,10 +2059,11 @@ GameObject:
   - component: {fileID: 1730083912}
   - component: {fileID: 1730083911}
   - component: {fileID: 1730083915}
+  - component: {fileID: 1730083917}
   - component: {fileID: 1730083916}
   m_Layer: 0
   m_Name: Item2
-  m_TagString: Item
+  m_TagString: PickupItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2038,7 +2114,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2dd1d1b54675de04e934e42b9f59b203, type: 2}
+  - {fileID: 2100000, guid: 4580c99f8d2d00045b667bb3113ff586, type: 2}
+  - {fileID: 2100000, guid: 7a712bd63b2f4e241af491804b88fefe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2126,6 +2203,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemScript
   itemName: Rock
   value: 19
+--- !u!114 &1730083917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730083910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9433c978856bc8340883203de30fdd70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupOBJ
+  destinationOBJ: {fileID: 503050809}
+  pickupClip: {fileID: 0}
+  dropClip: {fileID: 0}
+  source: {fileID: 0}
 --- !u!1 &1770501921
 GameObject:
   m_ObjectHideFlags: 0
@@ -2415,10 +2508,11 @@ GameObject:
   - component: {fileID: 2086311774}
   - component: {fileID: 2086311773}
   - component: {fileID: 2086311777}
+  - component: {fileID: 2086311779}
   - component: {fileID: 2086311778}
   m_Layer: 0
   m_Name: Item1
-  m_TagString: Item
+  m_TagString: PickupItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2469,7 +2563,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bebcd5cfccf4e9946bc7d59a880dc894, type: 2}
+  - {fileID: 2100000, guid: 4580c99f8d2d00045b667bb3113ff586, type: 2}
+  - {fileID: 2100000, guid: 7a712bd63b2f4e241af491804b88fefe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2557,6 +2652,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemScript
   itemName: Baseball
   value: 45.42
+--- !u!114 &2086311779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086311772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9433c978856bc8340883203de30fdd70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupOBJ
+  destinationOBJ: {fileID: 503050809}
+  pickupClip: {fileID: 0}
+  dropClip: {fileID: 0}
+  source: {fileID: 0}
 --- !u!1 &2112237136
 GameObject:
   m_ObjectHideFlags: 0
@@ -3462,6 +3573,7 @@ SceneRoots:
   - {fileID: 1070668634}
   - {fileID: 1423643103}
   - {fileID: 543450653530583991}
+  - {fileID: 876983620}
   - {fileID: 964155169}
   - {fileID: 201117180}
   - {fileID: 535018503}
