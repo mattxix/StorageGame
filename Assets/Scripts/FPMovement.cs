@@ -1,25 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Networking;
+
 
 [RequireComponent(typeof(CharacterController))]
+
 public class FPMovement : MonoBehaviour
 {
+
     public float speed = 10;
+    CharacterController controller;
     float h, v;
+
     public float gravity = -9.8f;
     public float jumpStrength = 10.0f;
     float velocity;
-    float gravityMultiplier = 3.0f;
+    float gravityMultiplier = 3;
 
-    //public AudioClip walkClip;
-    public AudioClip jumpClip;
-    public AudioSource source;
 
-    CharacterController controller;
-
-    // Start is called before the first frame update
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -29,12 +28,12 @@ public class FPMovement : MonoBehaviour
     void Update()
     {
         float moveX = h * speed;
-        float moveY = v * speed;
-        Vector3 movement = new Vector3(moveX, 0, moveY);
-        //Debug.Log($"{h}, {v}");
+        float moveZ = v * speed;
+
+        Vector3 movement = new Vector3(moveX, 0, moveZ);
         movement = Vector3.ClampMagnitude(movement, speed);
 
-        if (isGrounded() && velocity < 0)
+        if (IsGrounded() && velocity < 0)
         {
             velocity = -1;
         }
@@ -50,30 +49,24 @@ public class FPMovement : MonoBehaviour
         controller.Move(movement);
     }
 
-    //Player is walking
     public void MoveInput(InputAction.CallbackContext ctx)
     {
         h = ctx.ReadValue<Vector2>().x;
         v = ctx.ReadValue<Vector2>().y;
-        //source.PlayOneShot(walkClip);
     }
 
     public void Jump(InputAction.CallbackContext ctx)
     {
-        if(!isGrounded())
+        if (!IsGrounded())
         {
             return;
         }
-
-        if(ctx.performed)
+        if (ctx.performed)
         {
-            source.PlayOneShot(jumpClip);
-            velocity *= jumpStrength;
+            velocity = jumpStrength;
         }
-
     }
-
-    bool isGrounded()
+    bool IsGrounded()
     {
         return controller.isGrounded;
     }

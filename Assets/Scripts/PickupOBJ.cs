@@ -5,9 +5,9 @@ public class PickupOBJ : MonoBehaviour
     bool pickup = false;
     Rigidbody rb;
     public Transform destinationOBJ;
-    public AudioClip pickupClip;
-    public AudioClip dropClip;
-    public AudioSource source;
+    //public AudioClip pickupClip;
+    //public AudioClip dropClip;
+    //public AudioSource source;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,7 +26,7 @@ public class PickupOBJ : MonoBehaviour
 
         if (pickup)
         {
-            source.PlayOneShot(pickupClip);
+            //source.PlayOneShot(pickupClip);
             rb.useGravity = false;
             rb.isKinematic = true;
             transform.position = destinationOBJ.position;
@@ -34,7 +34,7 @@ public class PickupOBJ : MonoBehaviour
         }
         else
         {
-            source.PlayOneShot(dropClip);
+            //source.PlayOneShot(dropClip);
             rb.useGravity = true;
             rb.isKinematic = false;
             transform.parent = null;
