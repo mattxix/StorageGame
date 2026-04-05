@@ -39,7 +39,17 @@ public class PauseScript : MonoBehaviour
         characterController.enabled = !pauseToggle;
         movementScript.enabled = !pauseToggle;
 
-
+        if(pauseToggle)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else if (!pauseToggle)
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        
 
     }
 }
