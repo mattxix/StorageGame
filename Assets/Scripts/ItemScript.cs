@@ -4,29 +4,27 @@ using UnityEngine.UI;
 
 public class ItemScript : MonoBehaviour
 {
-    [Header("UI")]
-    public GameObject InfoCardCanvas;
-    public Image itemImage;
-    public TextMeshProUGUI itemNameText;
-    public TextMeshProUGUI estValueText;
-    public TextMeshProUGUI currentConditionText;
-    public GameObject restoreNotNeededText;
-    public TextMeshProUGUI restoreCostText;
-    public TextMeshProUGUI potentalGrowthText;
-    public TextMeshProUGUI cantRestoreText;
+    //public GameObject InfoCardCanvas;
+    [HideInInspector] public string itemNameText;
+    [HideInInspector] public string estValueText;
+    [HideInInspector] public string currentConditionText;
+    [HideInInspector] public string restoreCostText;
+    [HideInInspector] public string potentalGrowthText;
 
     [Header("Info")]
     public string itemName;
-    public float estValue;
+    public Image itemImage;
     public float value;
+    float estValue;
     float restorationCost;
     string potentialGrowthSymbols;
     float finalValue;
 
     public void Start()
     {
-        itemNameText.text = itemName;
-        estValueText.text = "~$" + estValue.ToString("F2");
+        estValue = Mathf.Max(1, Random.Range(value*.75f, value*1.25f));
+        itemNameText = itemName;
+        estValueText = "Value? - ~$" + estValue.ToString("F2");
 
         DamageCheck();
     }
@@ -37,23 +35,24 @@ public class ItemScript : MonoBehaviour
 
         if (!isDamaged)
         {
-            currentConditionText.text = "New";
-            restoreNotNeededText.SetActive(true);
+            currentConditionText = "Condition - New";
+            restoreCostText = "";
+            potentalGrowthText = "";
             return;
         }
 
-        restoreNotNeededText.SetActive(false);
+        
         PotentialValueCheck();
-        currentConditionText.text = "Damaged";
+        currentConditionText = "Condition - Damaged";
         restorationCost = value * 2;
-        restoreCostText.text = "$" + restorationCost.ToString("F2");
+        restoreCostText = "Restore Cost - $" + restorationCost.ToString("F2");
         
 
     }
     public void PotentialValueCheck()
     {
         //Chooses ($-$$$$$) has a chance to show 1 less or one more than the true value
-        potentialGrowthSymbols = ""; 
+        potentialGrowthSymbols = "Potential Growth - "; 
         int dSigns = Random.Range(1, 6);
         int displaySigns = dSigns;
         int roll = Random.Range(0, 10);
@@ -65,7 +64,7 @@ public class ItemScript : MonoBehaviour
         {
             potentialGrowthSymbols += "$";
         }
-        potentalGrowthText.text = "~"+potentialGrowthSymbols+"~";
+        potentalGrowthText = potentialGrowthSymbols;
         //Calculates new value based on the $ (1-5)
         switch (dSigns)
         {
@@ -91,14 +90,7 @@ public class ItemScript : MonoBehaviour
     //{
 
     //}
-    public void DisplayInfoCard()
-    {
-        InfoCardCanvas.SetActive(true);
-    }
-    public void DontDisplayInfoCard()
-    {
-        InfoCardCanvas.SetActive(false);
-    }
+    
 
 
 

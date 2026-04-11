@@ -6,6 +6,7 @@ public class RaycastFromPlayer : MonoBehaviour
 {
     public LayerMask layersToHit;
     public float raycastDistance = 5.0f;
+    public InfoCardManager cardManager;
     bool holdingItem = false;
     GameObject heldOBJ;
     MeshRenderer hitObj;
@@ -33,7 +34,7 @@ public class RaycastFromPlayer : MonoBehaviour
                 hitObj.materials[1].SetFloat("_Scale", 1.03f);
 
                 ItemScript objScript = hit.collider.GetComponentInParent<ItemScript>();
-                objScript.DisplayInfoCard();
+                cardManager.CollectInfoAndShow(objScript);
             }
 
         }
@@ -44,8 +45,8 @@ public class RaycastFromPlayer : MonoBehaviour
                 hitObj.materials[1].SetFloat("_Scale", 0.1f);     
                 hitObj = null;
             }
-            ItemScript objScript = hit.collider.GetComponentInParent<ItemScript>();
-            objScript.DontDisplayInfoCard();
+
+            cardManager.HideInfoCard();
         }
 
 
