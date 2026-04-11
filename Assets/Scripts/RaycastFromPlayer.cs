@@ -9,6 +9,7 @@ public class RaycastFromPlayer : MonoBehaviour
     bool holdingItem = false;
     GameObject heldOBJ;
     MeshRenderer hitObj;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,6 +31,9 @@ public class RaycastFromPlayer : MonoBehaviour
             {
                 hitObj = hit.collider.GetComponent<MeshRenderer>();
                 hitObj.materials[1].SetFloat("_Scale", 1.03f);
+
+                ItemScript objScript = hit.collider.GetComponentInParent<ItemScript>();
+                objScript.DisplayInfoCard();
             }
 
         }
@@ -40,7 +44,10 @@ public class RaycastFromPlayer : MonoBehaviour
                 hitObj.materials[1].SetFloat("_Scale", 0.1f);     
                 hitObj = null;
             }
+            ItemScript objScript = hit.collider.GetComponentInParent<ItemScript>();
+            objScript.DontDisplayInfoCard();
         }
+
 
     }
 
@@ -84,7 +91,15 @@ public class RaycastFromPlayer : MonoBehaviour
 
             if (Physics.Raycast(transform.position, transform.forward, out hit, raycastDistance, layersToHit))
             {
-                Debug.Log(hit.collider.name);
+                //Debug.Log(hit.collider.name);
+                if (hit.collider.CompareTag("Button"))
+                {
+                    hit.collider.GetComponent<ConfirmItem>().Confirm(false);  
+                }
+                if (hit.collider.CompareTag("RestoreButton"))
+                {
+                    hit.collider.GetComponent<ConfirmItem>().Confirm(true);
+                }
 
             }
         }
