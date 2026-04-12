@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Item
   - PickupItem
+  - Button
+  - RestoreButton
   layers:
   - Default
   - TransparentFX

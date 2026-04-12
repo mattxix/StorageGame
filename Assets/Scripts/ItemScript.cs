@@ -16,9 +16,9 @@ public class ItemScript : MonoBehaviour
     public Image itemImage;
     public float value;
     float estValue;
-    float restorationCost;
+    [HideInInspector] public float restorationCost;
     string potentialGrowthSymbols;
-    float finalValue;
+    [HideInInspector] public float finalValue;
 
     public void Start()
     {

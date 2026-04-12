@@ -5,14 +5,17 @@ public class ConfirmItem : MonoBehaviour
 {
     [Header("ReportUI")]
     public TextMeshProUGUI SpentOnUnitText;
-    public TextMeshProUGUI EstCostItemText;
+    //public TextMeshProUGUI EstCostItemText;
     public TextMeshProUGUI CostOfRestorationText;
-    public TextMeshProUGUI NotRestoredText;
+    //public TextMeshProUGUI NotRestoredText;
     public TextMeshProUGUI FinalSoldValueText;
+    public TextMeshProUGUI ProfitText;
     public GameObject ReportCanvas;
+    float profit;
+    float storageCost;
 
     [Header("Button")]
-    public GameObject ConfirmButton;
+    //public GameObject ConfirmButton;
 
     [Header("Collider")]
     public BoxCollider boxCollider;
@@ -30,6 +33,9 @@ public class ConfirmItem : MonoBehaviour
     void Start()
     {
         ReportCanvas.SetActive(false);
+
+        //Temp
+        storageCost = -25f;
     }
 
     // Update is called once per frame
@@ -61,14 +67,27 @@ public class ConfirmItem : MonoBehaviour
 
         if(IsGoingToRestore)
         {
-            //currentItem.
+
+            FinalSoldValueText.text = "Item Sold Value: +" + currentItem.finalValue.ToString();
+            CostOfRestorationText.text = "Restore Cost: -" + currentItem.restorationCost.ToString();
+
+            profit = storageCost - currentItem.restorationCost + currentItem.finalValue;
         }
         else
         {
-
+            Debug.Log("currentItem: " + currentItem);
+            Debug.Log("FinalSoldValueText: " + FinalSoldValueText);
+            FinalSoldValueText.text = "Item Sold Value: +" + currentItem.value.ToString();
+            CostOfRestorationText.text = "Restore Cost: Not Restored";
+            profit = storageCost + currentItem.value;
         }
 
-        
+        //temp
+        SpentOnUnitText.text = "Unit Cost: -$25";
+
+        ProfitText.text = "Profit: "+ profit;
+
+        ReportCanvas.SetActive(true);
 
     }
 

@@ -7,6 +7,7 @@ public class RaycastFromPlayer : MonoBehaviour
     public LayerMask layersToHit;
     public float raycastDistance = 5.0f;
     public InfoCardManager cardManager;
+    public ConfirmItem confirmScript;
     bool holdingItem = false;
     GameObject heldOBJ;
     MeshRenderer hitObj;
@@ -95,11 +96,13 @@ public class RaycastFromPlayer : MonoBehaviour
                 //Debug.Log(hit.collider.name);
                 if (hit.collider.CompareTag("Button"))
                 {
-                    hit.collider.GetComponent<ConfirmItem>().Confirm(false);  
+                    Debug.Log("clickeddefault");
+                    confirmScript.Confirm(false);  
                 }
                 if (hit.collider.CompareTag("RestoreButton"))
                 {
-                    hit.collider.GetComponent<ConfirmItem>().Confirm(true);
+                    Debug.Log("clickedRestore");
+                    confirmScript.Confirm(true);
                 }
 
             }
