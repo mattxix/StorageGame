@@ -2790,7 +2790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9433c978856bc8340883203de30fdd70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickupOBJ
-  destinationOBJ: {fileID: 0}
+  destinationOBJ: {fileID: 1177335902}
 --- !u!54 &307681486
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4618,7 +4618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9433c978856bc8340883203de30fdd70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickupOBJ
-  destinationOBJ: {fileID: 0}
+  destinationOBJ: {fileID: 1177335902}
 --- !u!54 &499843995
 Rigidbody:
   m_ObjectHideFlags: 0
